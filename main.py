@@ -5,11 +5,11 @@ from langchain.chat_models import ChatOpenAI
 
 chat_model = ChatOpenAI()
 
-st.title("인공지능 시인")
+st.title("AI coder with Python")
 
-content = st.text_input('시의 주제를 제시해주세요')
+content = st.text_input('무슨 코드를 만들건지 영어로 입력해주세요.')
 
-if st.button('시 작성 요청하기'):
-    with st.spinner('시 작성 중...'):
-        result = chat_model.predict(content + "에 대한 시를 써줘")
+if st.button('코드 작성 요청하기'):
+    with st.spinner('코드 작성 중...'):
+        result = chat_model.predict("write a code with python:" + content)
         st.write(result)
